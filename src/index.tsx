@@ -1,11 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/app/app';
-
-const appData = {
-  offersCount: 312,
-  city: 'Amsterdam'
-};
+import App from './app/app'; // Проверь путь, судя по структуре у тебя app/app.tsx
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -13,6 +8,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App data={appData} />
+    <App /> {/* Просто App, без пропсов */}
   </React.StrictMode>
 );
