@@ -5,11 +5,6 @@ const AMSTERDAM = {
   location: { latitude: 52.37454, longitude: 4.897976, zoom: 13 },
 };
 
-const COLOGNE = {
-  name: 'Cologne',
-  location: { latitude: 50.938361, longitude: 6.959974, zoom: 13 },
-};
-
 const DEFAULT_DESCRIPTION = [
   'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
   'An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.',
@@ -27,7 +22,7 @@ export const offers: Offer[] = [
     isPremium: true,
     rating: 4.8,
     previewImage: '/img/apartment-01.jpg',
-    images: ['/img/room.jpg', '/img/apartment-01.jpg', '/img/apartment-02.jpg', '/img/apartment-03.jpg', '/img/studio-01.jpg', '/img/apartment-01.jpg'],
+    images: ['/img/room.jpg', '/img/apartment-01.jpg', '/img/apartment-02.jpg', '/img/apartment-03.jpg', '/img/studio-01.jpg'],
     description: DEFAULT_DESCRIPTION,
     bedrooms: 3,
     maxAdults: 4,
@@ -75,8 +70,8 @@ export const offers: Offer[] = [
     title: 'White castle',
     type: 'house',
     price: 180,
-    city: COLOGNE,
-    location: { latitude: 50.943361, longitude: 6.949974, zoom: 8 },
+    city: AMSTERDAM,
+    location: { latitude: 52.3809553943508, longitude: 4.939309666406198, zoom: 8 },
     isFavorite: true,
     isPremium: true,
     rating: 5,

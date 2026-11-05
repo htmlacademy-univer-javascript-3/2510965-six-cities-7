@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import OffersList from '../../components/offer-list/offer-list';
+import Map from '../../components/map/map';
 import { Offer } from '../../types/offer';
 
 type MainPageProps = {
@@ -10,6 +11,7 @@ const CURRENT_CITY = 'Amsterdam';
 
 function MainPage({ offers }: MainPageProps) {
   const cityOffers = offers.filter((offer) => offer.city.name === CURRENT_CITY);
+  const city = cityOffers[0]?.city;
 
   return (
     <div className="page page--gray page--main">
@@ -103,7 +105,7 @@ function MainPage({ offers }: MainPageProps) {
               <OffersList offers={cityOffers} />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              {city && <Map city={city} offers={cityOffers} />}
             </div>
           </div>
         </div>
