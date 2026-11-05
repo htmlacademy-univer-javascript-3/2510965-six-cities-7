@@ -7,6 +7,7 @@ import { City, Offer } from '../../types/offer';
 type MapProps = {
   city: City;
   offers: Offer[];
+  className: string;
 };
 
 const defaultMarkerIcon = leaflet.icon({
@@ -15,7 +16,7 @@ const defaultMarkerIcon = leaflet.icon({
   iconAnchor: [13.5, 39],
 });
 
-function Map({ city, offers }: MapProps) {
+function Map({ city, offers, className }: MapProps) {
   const mapRef = useRef<HTMLElement | null>(null);
   const map = useMap(mapRef, city);
 
@@ -43,7 +44,7 @@ function Map({ city, offers }: MapProps) {
     };
   }, [map, offers]);
 
-  return <section className="cities__map map" ref={mapRef}></section>;
+  return <section className={`${className} map`} ref={mapRef}></section>;
 }
 
 export default Map;

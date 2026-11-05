@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Offer } from '../../types/offer';
 
-type CardVariant = 'cities' | 'favorites';
+export type CardVariant = 'cities' | 'favorites' | 'near-places';
 
 type OfferCardProps = {
   offer: Offer;

@@ -6,12 +6,14 @@ import OfferPage from '../pages/offer-page/offer-page';
 import NotFoundPage from '../pages/not-found-page/not-found-page';
 import PrivateRoute from '../components/private-route/private-route';
 import { Offer } from '../types/offer';
+import { Review } from '../types/review';
 
 type AppProps = {
   offers: Offer[];
+  reviews: Review[];
 };
 
-function App({ offers }: AppProps) {
+function App({ offers, reviews }: AppProps) {
   return (
     <BrowserRouter>
       <Routes>
@@ -32,7 +34,7 @@ function App({ offers }: AppProps) {
         />
 
         {/* Маршрут для Оффера (с динамическим ID) */}
-        <Route path="/offer/:id" element={<OfferPage offers={offers} />} />
+        <Route path="/offer/:id" element={<OfferPage offers={offers} reviews={reviews} />} />
 
         {/* Маршрут для 404 (catch-all) */}
         <Route path="*" element={<NotFoundPage />} />

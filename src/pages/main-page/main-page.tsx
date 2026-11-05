@@ -105,7 +105,7 @@ function MainPage({ offers }: MainPageProps) {
               <OffersList offers={cityOffers} />
             </section>
             <div className="cities__right-section">
-              {city && <Map city={city} offers={cityOffers} />}
+              {city && <Map city={city} offers={cityOffers} className="cities__map" />}
             </div>
           </div>
         </div>
