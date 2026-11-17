@@ -5,20 +5,21 @@ import FavoritesPage from '../pages/favorites-page/favorites-page';
 import OfferPage from '../pages/offer-page/offer-page';
 import NotFoundPage from '../pages/not-found-page/not-found-page';
 import PrivateRoute from '../components/private-route/private-route';
-import { Offer } from '../types/offer';
+import { useAppSelector } from '../hooks';
 import { Review } from '../types/review';
 
 type AppProps = {
-  offers: Offer[];
   reviews: Review[];
 };
 
-function App({ offers, reviews }: AppProps) {
+function App({ reviews }: AppProps) {
+  const offers = useAppSelector((state) => state.offers);
+
   return (
     <BrowserRouter>
       <Routes>
         {/* Маршрут для Главной */}
-        <Route path="/" element={<MainPage offers={offers} />} />
+        <Route path="/" element={<MainPage />} />
 
         {/* Маршрут для Логина */}
         <Route path="/login" element={<LoginPage />} />

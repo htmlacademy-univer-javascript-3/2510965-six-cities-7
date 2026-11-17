@@ -31,7 +31,9 @@ function OfferPage({ offers, reviews }: OfferPageProps) {
   const offerReviews = reviews.filter((review) => review.offerId === offer.id);
   // Пока берём тестовые данные: другие предложения из моков.
   // В будущем список «неподалёку» будет приходить с сервера.
-  const nearOffers = offers.filter((item) => item.id !== offer.id).slice(0, MAX_NEAR_OFFERS);
+  const nearOffers = offers
+    .filter((item) => item.id !== offer.id && item.city.name === offer.city.name)
+    .slice(0, MAX_NEAR_OFFERS);
   const ratingWidth = `${(Math.round(offer.rating) / MAX_RATING) * 100}%`;
 
   return (

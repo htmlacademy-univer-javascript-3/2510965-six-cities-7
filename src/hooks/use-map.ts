@@ -29,6 +29,19 @@ function useMap(mapRef: MutableRefObject<HTMLElement | null>, city: City): Map |
     }
   }, [mapRef, city]);
 
+  // При смене города перемещаем карту к его центру
+  useEffect(() => {
+    if (map !== null) {
+      map.setView(
+        {
+          lat: city.location.latitude,
+          lng: city.location.longitude,
+        },
+        city.location.zoom
+      );
+    }
+  }, [map, city]);
+
   return map;
 }
 
